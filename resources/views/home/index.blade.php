@@ -102,6 +102,7 @@
                       <div class="bed_room">
                          <h3>{{ $kamar->nama_kamar }}</h3>
                          <p>{{ Str::limit($kamar->deskripsi, 100) }}</p>
+                         <a class="btn btn-outline-info" href="{{ url('room_detail', $kamar->id) }}">Detail Kamar</a>
                       </div>
                    </div>
                 </div>

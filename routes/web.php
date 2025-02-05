@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\HomeController;
 
 Route::get('/about', function () {
     return view('home.about');
@@ -31,6 +31,10 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get("/home",[AdminController::class,'index'])->name('home');
+    Route::get("/data_kamar",[AdminController::class,'data_kamar']);
+    Route::post('/edit_kamar/{id}',[AdminController::class,'edit_kamar']);
+    Route::get("/room_detail/{id}",[HomeController::class,'room_detail']);
+    Route::get('/booked_kamar');
 });
 
 Route::get("/",[AdminController::class,'home']);
@@ -38,8 +42,9 @@ Route::get("/",[AdminController::class,'home']);
 Route::get("/create_kamar",[AdminController::class,'create_kamar']);
 Route::post('/tambah_kamar',[AdminController::class,'tambah_kamar']);
 
-Route::get("/data_kamar",[AdminController::class,'data_kamar']);
 
 Route::get("/kamar_update/{id}",[AdminController::class,'kamar_update']);
-Route::post('/edit_kamar/{id}',[AdminController::class,'edit_kamar']);
 Route::get("/kamar_delete/{id}",[AdminController::class,'kamar_delete']);
+
+Route::post('/add_booking/{id}',[HomeController::class,'add_booking']);
+

@@ -17,6 +17,7 @@
                   <li><a href="{{ url('create_kamar') }}">Tambah Kamar</a></li>
                 </ul>
               </li>
+              <li><a href="{{ url('booked_kamar') }}"><i class="icon-home"></i>Daftar Booking Kamar </a></li>
       </ul>
     </nav>
     <!-- Sidebar Navigation end-->

@@ -14,7 +14,7 @@
              <div class="col-md-4">
                 <h3>Menu Link</h3>
                 <ul class="link_menu">
-                   <li class="active"><a href="#">Home</a></li>
+                   <li><a href="#">Home</a></li>
                    <li><a href="about.html"> about</a></li>
                    <li><a href="room.html">Our Room</a></li>
                    <li><a href="gallery.html">Gallery</a></li>
@@ -62,6 +62,7 @@
  <!-- sidebar -->
  <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
  <script src="{{ asset('js/custom.js') }}"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 </body>
 </html>
