@@ -37,37 +37,31 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Nama Kamar</th>
-                                <th scope="col">Deskripsi</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Wifi</th>
-                                <th scope="col">Type Kamar</th>
-                                <th scope="col">Gambar</th>
+                                <th scope="col">Room Id</th>
+                                <th scope="col">Nama Booker</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Telepon</th>
+                                <th scope="col">Status Booking</th>
+                                <th scope="col">Tanggal Booking</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $d )
                             <tr>
-                                <td>{{$d->nama_kamar}}</td>
-                                <td>
-                                    <div class="description-container">
-                                        <p class="description-text">{{ $d->deskripsi }}</p>
-                                        <p class="description-summary">{{ Str::limit($d->deskripsi, 100) }}</p>
-                                        <a href="" class="read-more">Read More...</a>
-                                    </div>
-                                </td>
-                                <td>{{ $d->harga }}</td>
-                                <td>{{ $d->wifi }}</td>
-                                <td>{{ $d->type_kamar }}</td>
-                                <td>
-                                    <img width="75" src="room/{{$d->gambar}}" alt="">
+                                <td>{{$d->room_id}}</td>
+                                <td>{{ $d->nama }}</td>
+                                <td>{{ $d->email }}</td>
+                                <td>{{ $d->telepon }}</td>
+                                <td>{{ $d->status }}</td>
+                                <td><p>
+                                    {{ $d->start_date }} sampai
+                                    {{ $d->end_date }}
+                                    </p>
                                 </td>
                                 <td>
-                                    <a class="btn btn-outline-warning" href="{{ url('kamar_update',$d->id) }}">Update</a>
-                                    <br>
-                                    <br>
-                                    <a onclick="return confirm('Apakah Anda Ingin Menghapus Kamar?')" class="btn btn-outline-danger" href="{{ url('kamar_delete',$d->id) }}">Delete</a>
+                                    <a class="btn btn-outline-warning" href="{{ url('booking_update',$d->id) }}">Update</a>
+                                    <a onclick="return confirm('Apakah Anda Ingin Menghapus Kamar?')" class="btn btn-outline-danger" href="{{ url('booking_delete',$d->id) }}">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

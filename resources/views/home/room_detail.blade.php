@@ -46,17 +46,18 @@
                 @endif
 
                 <form action="{{ url('add_booking', $room->id) }}" method="Post">
-                    <div class="mb-3 form-floating">
-                        <label for="floatingInput">Nama lengkap</label>
+                    @csrf
+                    <div class="mb-3">
+                        <label>Nama lengkap</label>
                         <input type="text" name="nama" class="form-control" id="floatingInput" placeholder="Nama"
                             @if (Auth::id()) value="{{ Auth::user()->name }}" @endif>
                     </div>
-                    <div class="mb-3 form-floating">
+                    <div class="mb-3">
                         <label for="floatingInput">Email</label>
                         <input type="email" name="email" class="form-control" id="floatingInput"
                             placeholder="name@example.com">
                     </div>
-                    <div class="mb-3 form-floating">
+                    <div class="mb-3">
                         <label for="floatingInput">No Telpon</label>
                         <input type="number" name="telepon" class="form-control" id="floatingInput"
                             placeholder="Masukan No Telp">
